@@ -1,0 +1,666 @@
+/* ==================================================
+    GÊNESIS NOROESTE
+    Bootstrap 5 + CSS Custom
+  ================================================== */
+
+/* =========================
+    VARIÁVEIS
+  ========================= */
+
+:root {
+  --green-dark: #1b4332;
+  --green: #2d6a4f;
+  --green-light: #52b788;
+  --green-logo: #71c209;
+  --green-soft: #d8f3dc;
+
+  --gold: #e9c46a;
+
+  --cream: #f8f5f0;
+
+  --text: #1a1a1a;
+  --text-light: #6b7280;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  --transition: 0.3s ease;
+  --header-height: 80px; /* Alinhado com a altura real da navbar */
+}
+/* Definição global para garantir que os títulos herdem os cantos suaves da Nunito */
+.hero-title,
+.regiao-title,
+.programa-title,
+.section-title {
+  font-family: "Nunito", sans-serif !important; /* Remove a serifa antiga */
+  font-weight: 900 !important;                  /* Peso ultra-bold idêntico ao da imagem */
+  letter-spacing: -0.03em;                     /* Tracking levemente fechado como na referência */
+  color: #1a1a1a;                              /* Tom de grafite escuro/preto fosco da imagem */
+}
+/* =========================
+    BASE
+  ========================= */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+  scroll-margin-top: var(--header-height);
+}
+
+section[id]{
+  scroll-margin-top: var(--header-height);
+}
+
+/* =========================
+    TIPOGRAFIA
+  ========================= */
+
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.text-green {
+  color: var(--green-light);
+}
+
+.section-description {
+  max-width: 700px;
+  color: var(--text-light);
+}
+
+/* =========================
+    BOTÕES
+  ========================= */
+
+.btn {
+  border-radius: 50px;
+  font-weight: 800;
+  padding: 0.9rem 1.8rem;
+  transition: var(--transition);
+}
+
+.btn-success {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.btn-success:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light:hover {
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+}
+
+/* =========================
+    NAVBAR
+  ========================= */
+
+.navbar-genesis {
+  background: rgba(27, 67, 50, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-genesis .nav-link {
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+
+.navbar-genesis .nav-link:hover {
+  color: var(--green-soft);
+}
+
+/* =========================
+    HERO
+  ========================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)),
+    url("../img/design/cabecalho.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: var(--header-height);
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+}
+
+.hero-title em {
+  color: var(--green-logo);
+  font-style: italic;
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  margin: 2rem 0;
+}
+
+.hero-kicker {
+  display: inline-block;
+  color: var(--green-logo);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-row-fix {
+  width: 100%;
+  margin: 0;
+}
+
+/* =========================
+   BASE REGIÃO
+========================= */
+
+.regiao-section {
+  position: relative;
+  background: #faf9f6;
+  overflow: hidden;
+  display: flex;
+  align-items: center; 
+}
+
+/* fundo decorativo */
+.bg-regiao {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background: url("../img/design/fundo-regiao.png") no-repeat right top;
+  background-size: contain;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.regiao-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; 
+  position: relative;
+  z-index: 2;
+  width: 100%; 
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.regiao-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 750px;
+}
+
+.regiao-title {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.regiao-title span {
+  color: #6d9f2f;
+}
+
+.regiao-subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #16382d;
+  margin: 0;
+}
+
+.regiao-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+/* =========================
+   BANNERS
+========================= */
+
+.regiao-banner {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.regiao-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================
+   MUNICÍPIOS (GRID RESPONSIVO ADAPTADO)
+========================= */
+
+.regiao-municipios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+/* cards */
+.municipio-card {
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  min-height: 140px;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+}
+
+.municipio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.municipio-card img {
+  max-width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+}
+
+/* =========================
+    PROGRAMA
+========================= */
+
+.programa-section {
+  background: #f7f6f2;
+  padding: clamp(2rem, 4vw, 3.5rem) 0; /* Menos espaçamento vertical na seção */
+}
+
+.programa-title {
+  font-family: "", serif; /* Mantém a elegância serifada do design original */
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0b3d18; /* O tom escuro e sóbrio para a base do texto */
+  
+  /* Tipografia fluida: diminui em telas pequenas (mobile) e expande de forma controlada em telas grandes */
+  font-size: clamp(1.8rem, 4.5vw, 3rem); 
+  
+  margin-bottom: 0;
+  letter-spacing: -0.02em; /* Um leve ajuste de tracking para deixar o título mais moderno e compacto */
+}
+
+/* O destaque ampliado e colorido para a palavra "Gênesis" */
+.programa-title span {
+  color: var(--green-logo); /* Retorna ao verde vibrante da identidade visual do projeto */
+  font-size: 1.12em;        /* Ajuste cirúrgico: deixa a palavra maior que o restante do título */
+  font-weight: 900;         /* Peso extra para dar o máximo de impacto visual */
+  display: inline-block;    /* Garante a renderização perfeita da escala */
+  
+  /* Efeito opcional sutil: remove distorções de quebra em layouts ultra-compactos */
+  white-space: nowrap;      
+}
+
+
+.programa-grid-row {
+  margin-top: 0.5rem; /* Traz os cards bem para perto do texto descritivo */
+}
+
+.programa-card {
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  padding: 1.1rem; /* Padding interno menor e mais coeso */
+  background: #fff;
+  height: 100%;
+}
+
+.programa-card h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.programa-card .mini-line {
+  width: 35px;
+  height: 3px;
+  background: var(--green-light);
+  margin: 0.4rem 0 0.6rem; /* Margens da linha decorativa espremidas */
+}
+
+.programa-card p {
+  font-size: 0.88rem; /* Fonte compacta para o texto ocupar poucas linhas */
+  line-height: 1.4;
+}
+
+.programa-card-img {
+  border-radius: 12px;
+  margin-top: auto;
+  object-fit: cover;
+  height: 105px; /* Altura achatada para evitar que os cards estiquem a seção */
+  width: 100%;
+}
+
+.programa-callout {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem 1.5rem; /* Transforma o callout em uma linha elegante */
+  box-shadow: 0 4px 15px rgba(0,0,0,.04);
+  border-left: 4px solid var(--green-light);
+}
+
+
+/* =========================
+    CULTIVO (COMO FUNCIONA)
+  ========================= */
+
+.cultivo {
+  position: relative;
+  color: white;
+  background: url("../img/design/fundo_banner_cultivo.png");
+  z-index: 1;
+}
+
+.cultivo-title{
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.cultivo-title span{
+  color: #9ACD32;
+  position: relative;
+}
+
+.cultivo-title span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:4px;
+
+  width:100%;
+  height:6px;
+
+  background:rgba(154,205,50,.25);
+  border-radius:999px;
+}
+
+.cultivo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(27, 67, 50, 0.92), rgba(27, 67, 50, 0.92)),
+    url("../img/cultivo.webp");
+
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.etapa {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.etapa:hover {
+  transform: translateY(-3px);
+}
+
+.etapa-num {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  color: var(--green-light);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.etapa-label {
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.6);
+  display: block;
+}
+
+/* =========================
+    FAQ
+  ========================= */
+
+.faq {
+  background: var(--cream);
+}
+
+.accordion-item {
+  border: none;
+  border-radius: 16px !important;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.accordion-button {
+  font-weight: 800;
+  padding: 1.2rem;
+  background: #fff;
+  color: var(--text);
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--green-soft);
+  color: var(--green-dark);
+  box-shadow: none;
+}
+
+/* =========================
+    FORMULÁRIO (CAPTAÇÃO STYLE PRESERVED)
+  ========================= */
+
+.custom-captacao {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================
+    FOOTER (PRESERVED)
+  ========================= */
+
+.footer {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: #a3cc39 !important;
+}
+
+.footer-logo-img {
+  object-fit: contain;
+  max-width: 160px;
+  height: auto;
+}
+
+.footer-logo-img-sm {
+  object-fit: contain;
+  max-height: 90px;
+  max-width: 110px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transition: var(--transition);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.social-icon:hover {
+  background: #a3cc39;
+  color: #031530;
+}
+
+/* =========================
+    MEDIA QUERIES DE AJUSTE REFINADO
+  ========================= */
+
+@media (min-width: 768px) {
+  .programa-callout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 991px) {
+  :root {
+    --header-height: 70px;
+  }
+  
+  .navbar-collapse {
+    background: rgba(27, 67, 50, 0.98);
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero {
+    text-align: center;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero-sub {
+    margin-inline: auto;
+  }
+  
+  .bg-regiao {
+    width: 100%;
+    opacity: 0.2; /* suaviza no mobile para não cobrir texto */
+  }
+
+  .descricao-programa {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-lg {
+    width: 100%;
+  }
+  
+  .regiao-municipios {
+    grid-template-columns: repeat(2, 1fr); /* Mantém dois por linha em celulares pequenos em vez de amontoar */
+    gap: 12px;
+  }
+
+  .municipio-card {
+    min-height: 110px;
+    padding: 10px;
+  }
+}
