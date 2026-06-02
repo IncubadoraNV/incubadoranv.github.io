@@ -350,7 +350,13 @@ section[id]{
 ========================= */
 
 .programa-section {
-  background: #f7f6f2;
+  background: var(--green-dark);
+   background:
+    linear-gradient(var(--green-dark), var(--green)),
+    url("../img/design/banner_programa.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: clamp(2rem, 4vw, 3.5rem) 0; /* Menos espaçamento vertical na seção */
 }
 
@@ -358,7 +364,7 @@ section[id]{
   font-family: "", serif; /* Mantém a elegância serifada do design original */
   font-weight: 800;
   line-height: 1.1;
-  color: #0b3d18; /* O tom escuro e sóbrio para a base do texto */
+  color: #ffffff; /* O tom escuro e sóbrio para a base do texto */
   
   /* Tipografia fluida: diminui em telas pequenas (mobile) e expande de forma controlada em telas grandes */
   font-size: clamp(1.8rem, 4.5vw, 3rem); 
@@ -413,7 +419,7 @@ section[id]{
   border-radius: 12px;
   margin-top: auto;
   object-fit: cover;
-  height: 105px; /* Altura achatada para evitar que os cards estiquem a seção */
+  height: 150px; /* Altura achatada para evitar que os cards estiquem a seção */
   width: 100%;
 }
 
@@ -554,6 +560,38 @@ section[id]{
   -webkit-backdrop-filter: blur(8px);
 }
 
+.form-title{
+  color: var(--green-logo);
+  font-style: italic;
+}
+
+.form-bg-green {
+  --bs-bg-opacity: 1;
+background-color: var(--green-logo) !important;}
+
+
+.deadline-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1.25rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    color: var(--green-soft);
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+}
+
+.deadline-badge strong {
+    margin-left: .25rem;
+    color: var(--gold);
+    text-decoration: underline;
+    text-decoration-color: var(--green-light);
+    text-underline-offset: 3px;
+}
 /* =========================
     FOOTER (PRESERVED)
   ========================= */
@@ -573,14 +611,13 @@ section[id]{
 
 .footer-logo-img {
   object-fit: contain;
-  max-width: 160px;
+  max-width: 250px;
   height: auto;
 }
 
 .footer-logo-img-sm {
   object-fit: contain;
-  max-height: 90px;
-  max-width: 110px;
+  max-width: 120px;
   height: auto;
   opacity: 0.8;
 }
