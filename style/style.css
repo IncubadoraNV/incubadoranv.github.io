@@ -664,3 +664,18 @@ section[id]{
     padding: 10px;
   }
 }
+
+/* Tamanho padrão para Desktop, Notebook e Tablets */
+.navbar-logo {
+  height: 42px;
+  width: auto; /* Mantém a proporção da imagem idêntica */
+  object-fit: contain;
+  transition: height var(--transition); /* Efeito suave caso a navbar mude de tamanho */
+}
+
+/* Redução para Mobile pequeno e médio (telas abaixo de 576px) */
+@media (max-width: 575.98px) {
+  .navbar-logo {
+    height: 32px; /* Redução cirúrgica para encaixar perfeitamente em telas de 320px a 412px */
+  }
+}
